@@ -25,12 +25,12 @@ const pristine = new Pristine(uploadForm, { // добавление функци
 
 // Функция закрытия модального окна добавления нового изо-я
 const closeModal = () => {
-  uploadForm.reset();
-  pristine.reset();
   uploadOverlay.classList.add('hidden');
   bodyElement.classList.remove('.modal-open');
 
-  uploadInput.value = '';
+  uploadForm.reset(); // сбрасываем в исходное состояние
+  pristine.reset(); // сбрасываем в исходное состояние
+  uploadInput.value = ''; // очищаем для вставки новой картинки
 
   document.removeEventListener('keydown', onDocumentKeydown);
   textHashtags.removeEventListener('keydown', onFormFieldKeydown);
